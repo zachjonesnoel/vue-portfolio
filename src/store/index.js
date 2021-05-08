@@ -4,8 +4,19 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: {
+    darkTheme:false
+  },
+  getters:{
+    getTheme: state => {
+      return state.darkTheme;
+    }
+  },
+  mutations: {
+    SET_THEME(state, darkTheme) {
+      state.darkTheme = darkTheme;
+    }
+  },
   actions: {},
   modules: {},
 });
